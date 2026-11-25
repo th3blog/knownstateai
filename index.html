@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  
+  <!-- SEO OPTIMIZED META TAGS -->
+  <title>AI Implementation and Training | KnownStateAI Brisbane</title>
+  <meta name="description" content="Brisbane-based AI training and consulting for businesses. We help you implement ChatGPT, Copilot & AI tools with measurable outcomes. Expert AI implementation with proven ROI tracking.">
+  <meta name="keywords" content="AI training Brisbane, AI consultant Brisbane, ChatGPT training, Copilot implementation, business AI consulting, AI automation Brisbane, AI strategy Queensland, AI consultant Australia, AI training Australia">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AI Implementation and Training | KnownStateAI Brisbane">
+  <meta property="og:description" content="Brisbane-based AI training and consulting for businesses. Free learning resources and expert implementation with measurable outcomes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://knownstateai.com/">
+  
+  <!-- Local Business Schema for SEO -->
+  <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "ProfessionalService",
+   "name": "KnownStateAI",
+   "description": "AI Training and Consulting for Businesses in Brisbane",
+   "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Brisbane",
+    "addressRegion": "QLD",
+    "addressCountry": "AU"
+   },
+   "areaServed": ["Brisbane", "Gold Coast", "Sunshine Coast", "Southeast Queensland"],
+   "serviceType": ["AI Training", "AI Consulting", "ChatGPT Training", "Copilot Implementation"],
+   "priceRange": "$$"
+  }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f5f5;
+      padding: 0;
+    }
+    
+    .page-wrapper {
+      max-width: 1800px;
+      margin: 0 auto;
+      background: white;
+    }
+    
+    
+    /* ==================== HEADER & LOGO ==================== */
+    
+    .logo-lockup {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+    }
+    
+    .site-nav {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+    
+    .site-nav a {
+      color: #022B3A;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .site-nav a:hover {
+      color: #1F7A8C;
+    }
+
+    .site-nav .nav-cta {
+      background: #022B3A;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .site-nav .nav-cta:hover {
+      color: white;
+      background: #1F7A8C;
+    }
+
+    /* Hamburger menu - CSS only */
+    .menu-toggle {
+      display: none;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 110;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: #022B3A;
+      transition: all 0.3s;
+      border-radius: 2px;
+      pointer-events: none;
+    }
+
+    .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle:checked ~ .page-wrapper .hamburger span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .mobile-sidebar {
+      position: fixed;
+      top: -400px;
+      left: 0;
+      right: 0;
+      background: white;
+      z-index: 89;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      transition: top 0.3s ease;
+      overflow: hidden;
+    }
+
+    .menu-toggle:checked ~ .mobile-sidebar {
+      top: 80px;
+    }
+
+    .sidebar-header {
+      display: none;
+    }
+
+    .sidebar-links {
+      padding: 8px 0;
+    }
+
+    .sidebar-links a {
+      display: block;
+      color: #333;
+      text-decoration: none;
+      font-size: 0.95em;
+      font-weight: 500;
+      padding: 14px 24px;
+      transition: all 0.2s;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .sidebar-links a:last-child {
+      border-bottom: none;
+    }
+
+    .sidebar-links a:hover,
+    .sidebar-links a:active {
+      background: #f8f8f8;
+      color: #1F7A8C;
+    }
+
+    .sidebar-cta {
+      padding: 12px 24px 16px;
+      border-top: 1px solid #eee;
+    }
+
+    .sidebar-cta a {
+      display: block;
+      background: #022B3A;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.95em;
+      font-weight: 600;
+      text-align: center;
+      transition: background 0.2s;
+    }
+
+    .sidebar-cta a:hover {
+      background: #1F7A8C;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 88;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .menu-toggle:checked ~ .menu-overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    
+    .logo-with-tagline {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+
+    
+    .logo-icon {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .logo-text-option2 {
+      font-size: 1.5em;
+      font-weight: 600;
+      color: #022B3A;
+      letter-spacing: -0.02em;
+      text-transform: lowercase;
+    }
+    
+    /* ==================== MAIN LAYOUT ==================== */
+    
+    header {
+      padding: 30px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5e5e5;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 90;
+    }
+    
+    .cta-button {
+      font-family: 'Inter', sans-serif;
+      background: #022B3A;
+      color: white;
+      border: 2px solid #022B3A;
+      padding: 16px 36px;
+      font-size: 1.05em;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      text-align: center;
+      line-height: 1.2;
+    }
+    
+    .cta-button:hover {
+      background: #1F7A8C;
+      border-color: #1F7A8C;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(31, 122, 140, 0.3);
+    }
+
+    .cta-button.cta-outline {
+      background: transparent;
+      color: #1F7A8C;
+      border-color: #1F7A8C;
+    }
+
+    .cta-button.cta-outline:hover {
+      background: #1F7A8C;
+      color: white;
+    }
+
+    
+    /* ==================== HERO SECTION ==================== */
+    
+    .hero-section {
+      background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
+      color: white;
+      padding: 80px 60px;
+      text-align: center;
+    }
+    
+    .hero-section h1 {
+      font-size: 3.5em;
+      font-weight: 600;
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+    
+    .hero-section .subtitle {
+      font-size: 1.4em;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+    
+    .hero-section .location-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      margin-bottom: 40px;
+    }
+    
+    /* ==================== CONTENT SECTION ==================== */
+    
+    .content-section {
+      padding: 80px 60px;
+      background: white;
+    }
+    
+    .content-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    
+    .content-left h2 {
+      font-size: 3em;
+      font-weight: 600;
+      color: #022B3A;
+      line-height: 1.2;
+      margin-bottom: 30px;
+    }
+    
+    .content-left .problem-statement {
+      font-size: 2.6em;
+      color: #022B3A;
+      margin-bottom: 16px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .content-left .problem-punchline {
+      font-size: 1.3em;
+      color: #666;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+    
+    .content-left .solution-intro {
+      font-size: 2em;
+      color: #1F7A8C;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    
+    .solution-points {
+      list-style: none;
+      margin-bottom: 40px;
+      padding: 0;
+    }
+    
+    .solution-points li {
+      font-size: 1.1em;
+      color: #444;
+      padding: 12px 0;
+      padding-left: 30px;
+      position: relative;
+      line-height: 1.6;
+    }
+    
+    .solution-points li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #1F7A8C;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    
+    
+    .content-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .content-right .cta-button {
+      align-self: flex-start;
+    }
+    
+    .problem-section {
+      padding: 80px 60px;
+      background: #f9f9f9;
+    }
+    
+    .problem-section h2 {
+      font-size: 2.5em;
+      color: #022B3A;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .problem-card {
+      background: white;
+      padding: 24px 28px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border-left: 4px solid #1F7A8C;
+    }
+    
+    .problem-card h3 {
+      color: #022B3A;
+      font-size: 1.05em;
+      margin-bottom: 8px;
+    }
+    
+    .problem-card p {
+      color: #666;
+      line-height: 1.5;
+      font-size: 0.95em;
+    }
+    
+    
+    .solution-section {
+      padding: 80px 60px;
+      background: white;
+    }
+    
+    .solution-section h2 {
+      font-size: 2.5em;
+      color: #022B3A;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+    
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .solution-card {
+      text-align: center;
+      padding: 30px;
+    }
+    
+    .solution-icon {
+      margin-bottom: 20px;
+    }
+    
+    .solution-card h3 {
+      font-size: 1.5em;
+      color: #022B3A;
+      margin-bottom: 15px;
+    }
+    
+    .solution-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .philosophy-statement {
+      max-width: 900px;
+      margin: 50px auto 0;
+      text-align: center;
+      font-size: 1.3em;
+      color: #444;
+      line-height: 1.7;
+      padding: 40px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      border-left: 4px solid #1F7A8C;
+    }
+    
+    .philosophy-statement strong {
+      color: #022B3A;
+    }
+    
+    
+    .cta-section {
+      padding: 100px 60px 40px;
+      background: linear-gradient(135deg, #022B3A 0%, #1F7A8C 100%);
+      text-align: center;
+      color: white;
+    }
+    
+    .cta-section h3 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    
+    .cta-section p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+    
+    .cta-section .cta-button {
+      background: white;
+      color: #022B3A;
+    }
+    
+    .cta-section .cta-button:hover {
+      background: #BFDBF7;
+    }
+
+    /* BOOK PILL */
+    .book-pill {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(191,219,247,0.15);
+      border-radius: 50px;
+      padding: 6px;
+      transition: box-shadow 0.3s;
+    }
+    .book-pill:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .bp-profile {
+      display: flex; align-items: center; gap: 12px;
+      padding: 6px 16px 6px 6px;
+      cursor: pointer; border-radius: 50px;
+      transition: background 0.2s; text-decoration: none;
+    }
+    .bp-profile:hover { background: rgba(255,255,255,0.08); }
+    .bp-profile img {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 2px solid rgba(191,219,247,0.3);
+      object-fit: cover; transition: border-color 0.2s;
+    }
+    .bp-profile:hover img { border-color: rgba(191,219,247,0.6); }
+    .bp-profile .bp-name { font-size: 0.85em; font-weight: 600; color: white; }
+    .bp-profile .bp-sub { font-size: 0.68em; color: rgba(191,219,247,0.5); }
+    .bp-divider { width: 1px; height: 28px; background: rgba(191,219,247,0.15); margin: 0 4px; }
+    .bp-cta {
+      background: white; color: #022B3A; border: none;
+      padding: 12px 24px; font-family: 'Inter', sans-serif;
+      font-size: 0.9em; font-weight: 600; border-radius: 50px;
+      cursor: pointer; transition: all 0.2s;
+    }
+    .bp-cta:hover { background: #BFDBF7; transform: scale(1.02); }
+
+    /* Dark pill variant for light backgrounds */
+    .book-pill.pill-dark {
+      background: #022B3A;
+      border-color: rgba(31,122,140,0.3);
+    }
+    .book-pill.pill-dark:hover { box-shadow: 0 4px 20px rgba(2,43,58,0.3); }
+    
+    /* ==================== FOOTER (inside CTA section) ==================== */
+    
+    .site-footer { padding-top: 40px; }
+    .site-footer .footer-main { margin-top: 0; border-top: none; padding-top: 0; }
+    .footer-main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 0 0;
+      margin-top: 50px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .footer-brand {
+      font-size: 1.3em;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      text-transform: lowercase;
+    }
+    
+    .footer-contact {
+      display: flex;
+      gap: 32px;
+      font-size: 0.95em;
+    }
+    
+    .footer-contact a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .footer-contact a:hover {
+      color: white;
+    }
+    
+    .footer-contact span {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    
+    .footer-bottom {
+      padding: 12px 0 0;
+      text-align: center;
+      font-size: 0.85em;
+      color: rgba(255, 255, 255, 0.3);
+    }
+    
+    /* ==================== TIMELINE SECTION ==================== */
+    .timeline-section {
+      padding: 80px 60px;
+      background: #fafafa;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    .timeline-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .timeline-header h2 {
+      font-size: 2.2em;
+      font-weight: 600;
+      color: #022B3A;
+      margin-bottom: 12px;
+    }
+
+    .timeline-header p {
+      font-size: 1.05em;
+      color: #888;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 16.66%;
+      right: 16.66%;
+      height: 2px;
+      background: #e5e5e5;
+      z-index: 0;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .step-number {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step:nth-child(1) .step-number {
+      background: #f0f9f7;
+      border: 2px solid #1F7A8C;
+    }
+
+    .step:nth-child(2) .step-number {
+      background: #e5f4f0;
+      border: 2px solid #1F7A8C;
+    }
+
+    .step:nth-child(3) .step-number {
+      background: #022B3A;
+      border: 2px solid #022B3A;
+    }
+
+    .step-icon { font-size: 1.6em; }
+
+    .step-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65em;
+      color: #1F7A8C;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .step h3 {
+      font-size: 1.15em;
+      font-weight: 600;
+      color: #022B3A;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .step p {
+      font-size: 0.88em;
+      color: #888;
+      line-height: 1.6;
+    }
+
+    .step-detail {
+      margin-top: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72em;
+      color: #bbb;
+    }
+
+    .deliverable-tag {
+      display: inline-block;
+      background: #022B3A;
+      color: white;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65em;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+
+    /* ==================== HOW IT WORKS TIMELINE ==================== */
+    .timeline-section {
+      padding: 80px 60px;
+      background: #fafafa;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    .timeline-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .timeline-header h2 {
+      font-size: 2.2em;
+      font-weight: 600;
+      color: #022B3A;
+      margin-bottom: 12px;
+    }
+
+    .timeline-header p {
+      font-size: 1.05em;
+      color: #888;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 16.66%;
+      right: 16.66%;
+      height: 2px;
+      background: #e5e5e5;
+      z-index: 0;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .step-number {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step:nth-child(1) .step-number { background: #f0f9f7; border: 2px solid #1F7A8C; }
+    .step:nth-child(2) .step-number { background: #e5f4f0; border: 2px solid #1F7A8C; }
+    .step:nth-child(3) .step-number { background: #022B3A; border: 2px solid #022B3A; }
+
+    .step-icon { font-size: 1.6em; }
+
+    .step-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65em;
+      color: #1F7A8C;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .step h3 {
+      font-size: 1.15em;
+      font-weight: 600;
+      color: #022B3A;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .step p {
+      font-size: 0.88em;
+      color: #888;
+      line-height: 1.6;
+    }
+
+    .step-detail {
+      margin-top: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72em;
+      color: #bbb;
+    }
+
+    .deliverable-tag {
+      display: inline-block;
+      background: #022B3A;
+      color: white;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65em;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+
+    /* ==================== SCROLL REVEAL ==================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Slide from left */
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Slide from right */
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Quick Links */
+    .quick-links {
+      padding: 60px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+
+    .quick-links h3 {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #022B3A;
+      margin-bottom: 24px;
+    }
+
+    .quick-links-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* FEATURED BANNER */
+    .featured-banner {
+      display: block;
+      background: #022B3A;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 0 auto 24px;
+      max-width: 900px;
+      text-decoration: none;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .featured-banner:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(2,43,58,0.3); }
+    .featured-banner::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 40%;
+      background: linear-gradient(135deg, transparent 0%, #1F7A8C 100%);
+      opacity: 0.3;
+    }
+    .featured-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6em;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #7dd3e8;
+      background: rgba(125,211,232,0.2);
+      padding: 4px 10px;
+      border-radius: 3px;
+      display: inline-block;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+    .featured-banner h4 {
+      font-size: 1.1em;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 6px;
+      position: relative;
+      z-index: 1;
+    }
+    .featured-banner p {
+      font-size: 0.82em;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+      position: relative;
+      z-index: 1;
+    }
+    .featured-banner .fb-arrow {
+      position: absolute;
+      right: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #1F7A8C;
+      font-size: 1.4em;
+      z-index: 1;
+    }
+
+    .quick-link-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .quick-link-card:hover {
+      border-color: #1F7A8C;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .quick-link-icon {
+      font-size: 1.6em;
+      flex-shrink: 0;
+    }
+
+    .quick-link-text h4 {
+      font-size: 0.95em;
+      font-weight: 600;
+      color: #022B3A;
+      margin-bottom: 4px;
+    }
+
+    .quick-link-text p {
+      font-size: 0.78em;
+      color: #888;
+      line-height: 1.4;
+    }
+
+    .quick-link-arrow {
+      margin-left: auto;
+      color: #ccc;
+      font-size: 1.2em;
+      transition: color 0.2s;
+    }
+
+    .quick-link-card:hover .quick-link-arrow {
+      color: #1F7A8C;
+    }
+
+    /* ROLLING UPDATES (blog-style) - reuses .featured-banner for latest, news-card pattern below */
+    .updates-intro {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .updates-intro h3 {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #022B3A;
+      margin-bottom: 6px;
+    }
+    .updates-intro .updates-sub {
+      font-size: 0.9em;
+      color: #888;
+    }
+    .previous-updates {
+      max-width: 900px;
+      margin: 28px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+    }
+    .previous-updates-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65em;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #888;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .update-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 22px;
+      background: white;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .update-item:hover {
+      border-color: #1F7A8C;
+      background: #f8fcfb;
+      transform: translateX(2px);
+    }
+    .update-date {
+      flex-shrink: 0;
+      text-align: center;
+      min-width: 52px;
+      padding-right: 18px;
+      border-right: 1px solid #eee;
+    }
+    .update-date .day {
+      display: block;
+      font-size: 1.3em;
+      font-weight: 700;
+      color: #022B3A;
+      line-height: 1;
+    }
+    .update-date .month {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6em;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+    }
+    .update-body {
+      flex-grow: 1;
+      min-width: 0;
+    }
+    .update-body h5 {
+      font-size: 0.95em;
+      color: #022B3A;
+      margin-bottom: 3px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .update-body p {
+      font-size: 0.82em;
+      color: #777;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .update-tag {
+      flex-shrink: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.62em;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: #f0f6f8;
+      color: #1F7A8C;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .update-arrow {
+      flex-shrink: 0;
+      color: #ccc;
+      font-size: 1.1em;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .update-item:hover .update-arrow {
+      color: #1F7A8C;
+      transform: translateX(3px);
+    }
+    .browse-library {
+      max-width: 900px;
+      margin: 48px auto 0;
+      padding-top: 40px;
+      border-top: 1px solid #eee;
+    }
+    .browse-library h4 {
+      font-size: 1.05em;
+      font-weight: 600;
+      color: #022B3A;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 20px 30px;
+      }
+      
+      .content-section {
+        padding: 60px 30px;
+      }
+      
+      .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .content-left h2 {
+        font-size: 2.2em;
+      }
+      
+      .content-left .problem-statement {
+        font-size: 1.8em;
+      }
+
+      .content-left .problem-punchline {
+        font-size: 1.1em;
+      }
+      
+      .content-left .solution-intro {
+        font-size: 1.5em;
+      }
+      
+      .hero-section h1 {
+        font-size: 2.5em;
+      }
+      
+      .hero-section {
+        padding: 50px 30px;
+      }
+      
+      header .cta-button {
+        display: none;
+      }
+      
+      .site-nav {
+        display: none;
+      }
+      
+      .hamburger {
+        display: flex;
+      }
+
+      header {
+        justify-content: space-between;
+      }
+
+      .quick-links { padding: 40px 30px; }
+      .quick-links-grid { grid-template-columns: 1fr; }
+      .featured-banner { margin: 0 0 20px; }
+      .featured-banner .fb-arrow { display: none; }
+      .update-item { flex-wrap: wrap; gap: 12px; padding: 14px 16px; }
+      .update-date { min-width: auto; padding-right: 12px; }
+      .update-arrow { display: none; }
+      .browse-library { margin-top: 32px; padding-top: 28px; }
+      .book-pill { flex-direction: column; border-radius: 16px; padding: 12px; gap: 8px; }
+      .bp-profile { padding: 8px 12px; justify-content: center; }
+      .bp-divider { width: 80%; height: 1px; margin: 0 auto; }
+      .bp-cta { width: 100%; }
+      
+    .footer-main {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 30px 30px;
+      }
+      
+      .footer-contact {
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .footer-bottom {
+        padding: 16px 30px;
+      }
+      
+      .problem-section {
+        padding: 60px 30px;
+      }
+      
+      .timeline-section {
+        padding: 60px 30px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .steps::before {
+        top: 0;
+        bottom: 0;
+        left: 32px;
+        right: auto;
+        width: 2px;
+        height: auto;
+      }
+
+      .step {
+        text-align: left;
+        padding: 0 0 0 100px;
+      }
+
+      .step-number {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: 0;
+        width: 64px;
+        height: 64px;
+      }
+
+      .solution-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-section { padding: 50px 30px; }
+
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .steps::before {
+        top: 0; bottom: 0; left: 40px; right: auto;
+        width: 2px; height: auto;
+      }
+
+      .step {
+        text-align: left;
+        padding: 0 0 0 100px;
+      }
+
+      .step-number {
+        position: absolute;
+        left: 0; top: 0;
+        margin: 0;
+        width: 64px; height: 64px;
+      }
+    }
+
+    /* BIO TRIGGER */
+    .bio-trigger-section {
+      padding: 30px 5% 40px;
+      display: flex;
+      justify-content: center;
+    }
+    .bio-trigger {
+      background: #022B3A;
+      border-radius: 8px;
+      padding: 24px 36px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+      max-width: 520px;
+      width: 100%;
+    }
+    .bio-trigger:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(2,43,58,0.3); }
+    .bio-trigger img {
+      width: 65px; height: 65px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .bio-trigger h3 { color: white; font-size: 1em; margin-bottom: 1px; }
+    .bio-trigger .bio-role { color: #1F7A8C; font-size: 0.78em; font-weight: 500; margin-bottom: 4px; }
+    .bio-trigger .bio-sub { color: rgba(255,255,255,0.45); font-size: 0.78em; }
+    .bio-trigger .bio-link { color: #1F7A8C; font-size: 0.78em; font-weight: 600; margin-top: 4px; }
+
+    /* BIO MODAL */
+    .bio-overlay {
+      display: none; position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 9999;
+      align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .bio-overlay.active { display: flex; }
+    .bio-modal {
+      background: #022B3A;
+      border-radius: 12px;
+      max-width: 600px; width: 100%;
+      padding: 44px 44px 36px;
+      position: relative;
+      max-height: 90vh; overflow-y: auto;
+    }
+    .bio-modal-close {
+      position: absolute; top: 14px; right: 18px;
+      background: none; border: none;
+      font-size: 1.4em; cursor: pointer;
+      color: rgba(255,255,255,0.3); line-height: 1;
+    }
+    .bio-modal-close:hover { color: rgba(255,255,255,0.6); }
+    .bio-modal-label { font-size: 0.75em; text-transform: uppercase; letter-spacing: 0.08em; color: #1F7A8C; font-weight: 600; margin-bottom: 16px; }
+    .bio-modal-photo {
+      width: 130px; height: 160px;
+      border-radius: 8px;
+      object-fit: cover; object-position: center top;
+      float: left;
+      margin: 0 24px 8px 0;
+    }
+    .bio-modal h3 { color: white; font-size: 1.25em; font-weight: 700; margin-bottom: 1px; }
+    .bio-modal .bio-modal-role { color: #1F7A8C; font-size: 0.82em; font-weight: 500; margin-bottom: 16px; }
+    .bio-modal p { font-size: 0.86em; line-height: 1.75; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
+    .bio-modal .degree { font-size: 0.78em; color: rgba(255,255,255,0.35); margin-top: 6px; }
+  </style>
+</head>
+<body>
+  <input type="checkbox" id="menuToggle" class="menu-toggle">
+  <div class="page-wrapper">
+    
+    <header>
+        <a href="#top" class="logo-lockup">
+          <svg class="logo-icon" width="50" height="50" viewBox="0 0 110 110">
+            <rect x="5" y="5" width="100" height="100" rx="20" fill="#022B3A"/>
+            <circle cx="55" cy="55" r="38" fill="none" stroke="#BFDBF7" stroke-width="2" opacity="0.3"/>
+            <circle cx="55" cy="55" r="27" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
+            <circle cx="55" cy="55" r="17" fill="#BFDBF7"/>
+          </svg>
+          <div class="logo-text-option2">knownstateai</div>
+        </a>
+        <nav class="site-nav">
+          <a href="learn.html">Learn</a>
+          <a href="guide.html">Guide</a>
+          <a href="ai-maturity.html">AI Assessment</a>
+        </nav>
+        <label for="menuToggle" class="hamburger">
+          <span></span><span></span><span></span>
+        </label>
+      </header>
+      
+      <!-- HERO SECTION -->
+      <section id="top" class="hero-section">
+        <span class="location-badge">Brisbane-based</span>
+        <h1>Your team has AI tools. Do they know how to use them?</h1>
+        <p class="subtitle">Explore our learning resources and start building your AI skills. Hands-on consulting available when you need it.</p>
+      </section>
+      
+      <!-- CONTENT SECTION -->
+      <section class="content-section">
+        <div class="content-wrapper">
+          <div class="content-left reveal-left">
+            <p class="problem-statement">Most businesses didn't fail at AI. They were never set up to succeed.</p>
+            <p class="problem-punchline"><strong>AI was added. Nothing changed.</strong></p>
+            <p class="solution-intro">We establish a knownstate.</p>
+          </div>
+          
+          <div class="content-right reveal-right">
+            <ul class="solution-points">
+              <li>We sit with you and assess how AI is actually being used in your business today</li>
+              <li>We identify what's reliable, what's assumed, and what's broken</li>
+              <li>We align AI usage to your real roles and responsibilities</li>
+              <li>We improve it continuously, not once, not randomly</li>
+            </ul>
+            <div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start; margin-top: 10px;">
+              <a href="ai-maturity.html" class="cta-button cta-outline" style="font-size: 0.85em;">Assess Your AI Readiness</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUICK LINKS / ROLLING UPDATES -->
+      <section class="quick-links">
+        <div class="updates-intro reveal">
+          <h3>Latest from KnownStateAI</h3>
+          <p class="updates-sub">New writeups, courses, and resources. Most recent first.</p>
+        </div>
+
+        <!-- =====================================================
+           FEATURED (most recent , when new content launches,
+           copy this block's content into a new <a class="update-item">
+           in the "previous-updates" list below, then update
+           this block with the new latest item)
+           ===================================================== -->
+        <a href="learn.html#pathways" class="featured-banner reveal">
+          <div class="featured-tag">Just launched</div>
+          <h4>Two self-paced courses now live: Copilot in Practice and Claude in Practice</h4>
+          <p>Seven modules each, with quizzes, progress tracking, and decision tools. Pick the tool you actually use, or work through both.</p>
+          <span class="fb-arrow">→</span>
+        </a>
+
+        <!-- PREVIOUS UPDATES (reverse chronological) -->
+        <div class="previous-updates">
+          <div class="previous-updates-label">Previously</div>
+
+          <a href="guide.html" class="update-item reveal">
+            <div class="update-date">
+              <span class="day">16</span>
+              <span class="month">Apr 2026</span>
+            </div>
+            <div class="update-body">
+              <h5>Your Practical Guide to AI at Work</h5>
+              <p>Claude and Microsoft 365 Copilot, side by side. Seven sections covering modes, prompts, workspace, automation, and more.</p>
+            </div>
+            <span class="update-tag">Guide</span>
+            <span class="update-arrow">→</span>
+          </a>
+
+          <a href="copilot-2026.html" class="update-item reveal">
+            <div class="update-date">
+              <span class="day">24</span>
+              <span class="month">Mar 2026</span>
+            </div>
+            <div class="update-body">
+              <h5>Microsoft 365 Copilot in 2026: What Office Workers Need to Know</h5>
+              <p>What it does, what changed this year, what it costs, and how it compares to Claude and ChatGPT.</p>
+            </div>
+            <span class="update-tag">Article</span>
+            <span class="update-arrow">→</span>
+          </a>
+
+          <a href="https://anthropic.skilljar.com/" target="_blank" rel="noopener" class="update-item reveal">
+            <div class="update-date">
+              <span class="day">16</span>
+              <span class="month">Mar 2026</span>
+            </div>
+            <div class="update-body">
+              <h5>Anthropic Academy: Free Claude Courses</h5>
+              <p>13 self-paced courses from Anthropic covering Claude 101, AI Fluency, Claude Code, MCP, and more. All free.</p>
+            </div>
+            <span class="update-tag">External</span>
+            <span class="update-arrow">→</span>
+          </a>
+        </div>
+
+        <!-- BROWSE LIBRARY (evergreen navigation - your existing 3 cards) -->
+        <div class="browse-library">
+          <h4>Browse our learning library</h4>
+          <div class="quick-links-grid">
+            <a href="prompt-examples.html" class="quick-link-card reveal">
+              <span class="quick-link-icon">✍️</span>
+              <div class="quick-link-text">
+                <h4>Prompt Examples</h4>
+                <p>Before-and-after prompts across real business roles</p>
+              </div>
+              <span class="quick-link-arrow">→</span>
+            </a>
+            <a href="context-engineering.html" class="quick-link-card reveal">
+              <span class="quick-link-icon">🧠</span>
+              <div class="quick-link-text">
+                <h4>Context Engineering</h4>
+                <p>The skill that separates 1x from 10x in 2026</p>
+              </div>
+              <span class="quick-link-arrow">→</span>
+            </a>
+            <a href="beyond-prompts.html" class="quick-link-card reveal">
+              <span class="quick-link-icon">⚡</span>
+              <div class="quick-link-text">
+                <h4>Beyond Prompts</h4>
+                <p>AI agents that automate entire workflows</p>
+              </div>
+              <span class="quick-link-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <!-- PROBLEM SECTION (NEW - SEO-FOCUSED) -->
+      <section class="problem-section">
+        <h2 class="reveal">Sound Familiar?</h2>
+        <div class="problem-grid">
+          <div class="problem-card reveal">
+            <h3>No One Remembers What Doesn't Work</h3>
+            <p>When AI prompts fail, people either keep tweaking until they're frustrated, or they give up and do it manually. No one tracks what didn't work, so the same problems happen over and over. No system. Just ad-hoc tinkering.</p>
+          </div>
+          
+          <div class="problem-card reveal">
+            <h3>Can't Measure AI ROI</h3>
+            <p>Your staff are using AI tools, but you can't track time saved, quality improvements, or actual business impact.</p>
+          </div>
+          
+          <div class="problem-card reveal">
+            <h3>Generic Training That Doesn't Stick</h3>
+            <p>You've sent YouTube links or run one-off workshops, but nothing changes. No follow-up, no accountability.</p>
+          </div>
+          
+          <div class="problem-card reveal">
+            <h3>Shadow AI Usage</h3>
+            <p>Employees are using ChatGPT and other AI tools without governance, creating compliance and quality risks.</p>
+          </div>
+          
+          <div class="problem-card reveal">
+            <h3>No Clear Strategy</h3>
+            <p>You know AI could help, but which tools? For which teams? Where's the ROI? No one has answers.</p>
+          </div>
+          
+          <div class="problem-card reveal">
+            <h3>Tools Don't Match Roles</h3>
+            <p>Your sales team, admin team, and operations team all need different AI solutions, but they're getting generic advice.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SOLUTION SECTION -->
+      <section id="approach" class="solution-section">
+        <h2 class="reveal">The KnownState Method: Practical AI Implementation</h2>
+        
+        <div class="solution-grid">
+          <div class="solution-card reveal">
+            <svg class="solution-icon" width="48" height="48" viewBox="0 0 48 48">
+              <!-- Assess icon: Magnifying glass over data -->
+              <circle cx="18" cy="18" r="12" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
+              <line x1="26" y1="26" x2="36" y2="36" stroke="#022B3A" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="14" y1="14" x2="22" y2="14" stroke="#1F7A8C" stroke-width="1.5"/>
+              <line x1="14" y1="18" x2="20" y2="18" stroke="#1F7A8C" stroke-width="1.5"/>
+              <line x1="14" y1="22" x2="22" y2="22" stroke="#1F7A8C" stroke-width="1.5"/>
+            </svg>
+            <h3>1. ASSESS</h3>
+            <p>We assess how AI is actually being used in your business today. What tools are your teams using? ChatGPT? Microsoft Copilot? Custom prompts? We map your current state.</p>
+          </div>
+          
+          <div class="solution-card reveal">
+            <svg class="solution-icon" width="48" height="48" viewBox="0 0 48 48">
+              <!-- Identify icon: Target/crosshair -->
+              <circle cx="24" cy="24" r="18" fill="none" stroke="#BFDBF7" stroke-width="2"/>
+              <circle cx="24" cy="24" r="12" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
+              <circle cx="24" cy="24" r="4" fill="#022B3A"/>
+              <line x1="24" y1="6" x2="24" y2="14" stroke="#1F7A8C" stroke-width="2"/>
+              <line x1="24" y1="34" x2="24" y2="42" stroke="#1F7A8C" stroke-width="2"/>
+              <line x1="6" y1="24" x2="14" y2="24" stroke="#1F7A8C" stroke-width="2"/>
+              <line x1="34" y1="24" x2="42" y2="24" stroke="#1F7A8C" stroke-width="2"/>
+            </svg>
+            <h3>2. IDENTIFY</h3>
+            <p>We identify what's working, what's assumed, and what's broken. Not all AI usage delivers value, we find your wins and fix the gaps. Clear ROI tracking starts here.</p>
+          </div>
+          
+          <div class="solution-card reveal">
+            <svg class="solution-icon" width="48" height="48" viewBox="0 0 48 48">
+              <!-- Align icon: Overlapping squares/alignment -->
+              <rect x="8" y="8" width="20" height="20" rx="3" fill="none" stroke="#BFDBF7" stroke-width="2"/>
+              <rect x="20" y="20" width="20" height="20" rx="3" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
+              <rect x="20" y="20" width="8" height="8" fill="#022B3A"/>
+            </svg>
+            <h3>3. ALIGN</h3>
+            <p>We align AI usage to your actual business roles and responsibilities. Sales teams need different AI tools than admin. We match AI to real work, not generic training.</p>
+          </div>
+          
+          <div class="solution-card reveal">
+            <svg class="solution-icon" width="48" height="48" viewBox="0 0 48 48">
+              <!-- Improve icon: Upward arrow with steps -->
+              <polyline points="8,32 16,28 24,20 32,16 40,8" fill="none" stroke="#1F7A8C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="32,8 40,8 40,16" fill="none" stroke="#022B3A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="8" cy="32" r="2" fill="#BFDBF7"/>
+              <circle cx="16" cy="28" r="2" fill="#BFDBF7"/>
+              <circle cx="24" cy="20" r="2" fill="#1F7A8C"/>
+              <circle cx="32" cy="16" r="2" fill="#1F7A8C"/>
+              <circle cx="40" cy="8" r="2" fill="#022B3A"/>
+            </svg>
+            <h3>4. IMPROVE</h3>
+            <p>We improve continuously, not once, not randomly. Track time saved, quality improvements, and business impact. Refine prompts, scale what works, cut what doesn't.</p>
+          </div>
+        </div>
+        
+        <div class="philosophy-statement">
+          Our philosophy is simple: <strong>if it's not known, we don't pretend it is.</strong> That's why every engagement starts by establishing your knownstate, your actual baseline for AI usage and outcomes.
+        </div>
+      </section>
+
+<!-- FOOTER -->
+      <section class="cta-section site-footer">
+        
+        <div class="footer-main">
+          <div class="footer-brand">knownstateai</div>
+          <div class="footer-contact">
+            <a href="mailto:hello@knownstateai.com">hello@knownstateai.com</a>
+            <span>Brisbane, QLD</span>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; 2025 KnownStateAI. All rights reserved.
+        </div>
+      </section>
+
+    </div>
+
+  <!-- Mobile overlay (tap to close) -->
+  <label for="menuToggle" class="menu-overlay"></label>
+
+  <!-- Mobile sidebar -->
+  <div class="mobile-sidebar">
+    <a href="index.html" class="sidebar-header" style="text-decoration:none;">
+      <svg viewBox="0 0 110 110">
+        <rect x="5" y="5" width="100" height="100" rx="20" fill="#022B3A"/>
+        <circle cx="55" cy="55" r="38" fill="none" stroke="#BFDBF7" stroke-width="2" opacity="0.3"/>
+        <circle cx="55" cy="55" r="27" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
+        <circle cx="55" cy="55" r="17" fill="#BFDBF7"/>
+      </svg>
+      <span class="sidebar-brand">knownstateai</span>
+    </a>
+    <div class="sidebar-links">
+      <a href="learn.html">Learn</a>
+      <a href="guide.html">Guide</a>
+          <a href="ai-maturity.html">AI Assessment</a>
+    </div>
+  </div>
+  
+  <script>
+    // Close sidebar when a link is clicked
+    document.querySelectorAll('.sidebar-links a, .sidebar-cta a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        document.getElementById('menuToggle').checked = false;
+      });
+    });
+
+    // Scroll reveal with row-aware stagger
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          // Find siblings in same parent that are also reveal elements
+          const parent = entry.target.parentElement;
+          const siblings = parent.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+          let index = 0;
+          siblings.forEach(function(sib, i) {
+            if (sib === entry.target) index = i;
+          });
+          // Stagger: each sibling gets 0.12s more delay
+          entry.target.style.transitionDelay = (index * 0.12) + 's';
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function(el) {
+      observer.observe(el);
+    });
+  </script>
+
+
+</body></html>
