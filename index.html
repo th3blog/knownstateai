@@ -3,107 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free AI Courses | knownstateai</title>
-  <meta name="description" content="Two free, self-paced courses for using AI at work: Microsoft 365 Copilot and Claude.">
-  <meta property="og:title" content="Free AI Courses | knownstateai">
-  <meta property="og:description" content="Free, self-paced courses for using Microsoft 365 Copilot and Claude at work.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://knownstateai.com/">
+  <title>knownstateai | Loading new blog 2027</title>
+  <meta name="description" content="knownstateai: loading new blog, 2027.">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root { --dark:#022B3A; --teal:#1F7A8C; --light:#BFDBF7; --paper:#F4F7F9; --ink:#14212A; --muted:#5A6B72; --border:#DCE6EB; }
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Inter',system-ui,sans-serif; background:var(--paper); color:var(--ink); line-height:1.6; -webkit-font-smoothing:antialiased; }
-    a { color:inherit; }
+    html, body { height:100%; }
+    body {
+      font-family:'Inter',system-ui,sans-serif; color:#fff; -webkit-font-smoothing:antialiased;
+      background:#011a24;
+      background-image:
+        radial-gradient(110% 70% at 50% 0%, rgba(31,122,140,.55) 0%, rgba(2,43,58,0) 65%),
+        linear-gradient(rgba(191,219,247,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(191,219,247,.04) 1px, transparent 1px);
+      background-size:auto, 32px 32px, 32px 32px;
+      display:flex; align-items:center; justify-content:center; padding:32px 16px;
+    }
+    .wrap { width:100%; max-width:520px; }
+    .brand { display:flex; align-items:center; gap:12px; margin-bottom:56px; }
+    .brand svg { width:38px; height:38px; }
+    .brand span { font-weight:800; font-size:1.25rem; letter-spacing:-.01em; }
 
-    header { background:#fff; border-bottom:1px solid var(--border); }
-    .bar { max-width:1040px; margin:0 auto; padding:18px 24px; display:flex; align-items:center; gap:12px; }
-    .bar svg { width:40px; height:40px; flex-shrink:0; }
-    .brand { font-weight:700; font-size:1.2rem; color:var(--dark); text-decoration:none; }
+    .label { font-family:'JetBrains Mono',monospace; font-size:.8rem; color:#BFDBF7; letter-spacing:.08em; text-transform:uppercase; opacity:.8; }
+    h1 { margin-top:10px; font-size:clamp(2.2rem,8vw,3.4rem); font-weight:800; letter-spacing:-.03em; line-height:1.05; }
+    h1 em { font-style:normal; color:#BFDBF7; }
 
-    .hero { background:linear-gradient(135deg,#022B3A 0%,#1F7A8C 100%); color:#fff; }
-    .hero-inner { max-width:1040px; margin:0 auto; padding:72px 24px 80px; }
-    .tag { display:inline-block; font-size:.75rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--light); background:rgba(191,219,247,.12); border:1px solid rgba(191,219,247,.25); padding:6px 12px; border-radius:999px; margin-bottom:22px; }
-    .hero h1 { font-size:clamp(2rem,5vw,3.1rem); line-height:1.12; font-weight:800; letter-spacing:-.02em; max-width:720px; }
-    .hero p { margin-top:18px; font-size:1.1rem; color:rgba(255,255,255,.78); max-width:620px; }
+    .bar { margin-top:28px; height:10px; border-radius:999px; background:rgba(191,219,247,.12); overflow:hidden; }
+    .fill { height:100%; width:88%; border-radius:999px; background:linear-gradient(90deg,#1F7A8C,#BFDBF7); position:relative; animation:creep 30s ease-out forwards; }
+    .fill::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent); animation:shine 2.4s linear infinite; }
+    @keyframes creep { from { width:84%; } to { width:93%; } }
+    @keyframes shine { from { transform:translateX(-100%); } to { transform:translateX(100%); } }
+    .pct { margin-top:10px; display:flex; justify-content:space-between; font-family:'JetBrains Mono',monospace; font-size:.8rem; color:rgba(255,255,255,.55); }
 
-    main { max-width:1040px; margin:-44px auto 0; padding:0 24px 72px; }
-    .courses { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:22px; }
-    .card { background:#fff; border:1px solid var(--border); border-radius:16px; padding:28px; display:flex; flex-direction:column; text-decoration:none; box-shadow:0 6px 24px rgba(2,43,58,.08); transition:transform .2s, box-shadow .2s; }
-    .card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(2,43,58,.14); }
-    .card .kicker { font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--teal); }
-    .card h2 { font-size:1.45rem; color:var(--dark); margin:8px 0 10px; line-height:1.25; }
-    .card p { color:var(--muted); font-size:.97rem; flex:1; }
-    .meta { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0 22px; }
-    .meta span { font-size:.78rem; font-weight:600; color:var(--dark); background:var(--paper); border:1px solid var(--border); padding:5px 10px; border-radius:999px; }
-    .go { align-self:flex-start; font-weight:700; font-size:.95rem; color:#fff; background:var(--dark); padding:11px 18px; border-radius:10px; }
-    .card:hover .go { background:var(--teal); }
-
-    .how { margin-top:44px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
-    .how div { padding:4px 2px; }
-    .how h3 { font-size:1rem; color:var(--dark); margin-bottom:4px; }
-    .how p { font-size:.93rem; color:var(--muted); }
-
-    footer { border-top:1px solid var(--border); background:#fff; }
-    footer div { max-width:1040px; margin:0 auto; padding:24px; font-size:.85rem; color:var(--muted); }
+    .status { margin-top:44px; font-family:'JetBrains Mono',monospace; font-size:.95rem; line-height:2; border-left:2px solid rgba(191,219,247,.3); padding-left:16px; }
+    .status div { color:rgba(255,255,255,.6); }
+    .status b { color:#fff; font-weight:500; }
+    .cursor { display:inline-block; width:9px; height:1.1em; background:#BFDBF7; vertical-align:-3px; margin-left:4px; animation:blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity:0; } }
+    @media (prefers-reduced-motion:reduce) { .fill, .fill::after, .cursor { animation:none; } }
   </style>
 </head>
 <body>
-
-  <header>
-    <div class="bar">
+  <div class="wrap">
+    <div class="brand">
       <svg viewBox="0 0 110 110" aria-hidden="true">
-        <rect x="5" y="5" width="100" height="100" rx="20" fill="#022B3A"/>
-        <circle cx="55" cy="55" r="38" fill="none" stroke="#BFDBF7" stroke-width="2" opacity="0.3"/>
-        <circle cx="55" cy="55" r="27" fill="none" stroke="#1F7A8C" stroke-width="2.5"/>
-        <circle cx="55" cy="55" r="17" fill="#BFDBF7"/>
+        <rect x="5" y="5" width="100" height="100" rx="22" fill="#022B3A" stroke="rgba(191,219,247,.25)"/>
+        <circle cx="55" cy="55" r="27" fill="none" stroke="#1F7A8C" stroke-width="3"/>
+        <circle cx="55" cy="55" r="16" fill="#BFDBF7"/>
       </svg>
-      <a class="brand" href="index.html">knownstateai</a>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="hero-inner">
-      <span class="tag">Free courses</span>
-      <h1>Learn to use AI at work, properly.</h1>
-      <p>Two free, self-paced courses with practical prompts, real examples and quick quizzes.</p>
-    </div>
-  </section>
-
-  <main>
-    <div class="courses">
-      <a class="card" href="course.html">
-        <span class="kicker">Course</span>
-        <h2>Microsoft 365 Copilot in Practice</h2>
-        <p>Get real value from Copilot in Word, Excel, Outlook and Teams. Learn how to give it the right context so the first answer is usable.</p>
-        <div class="meta"><span>7 modules</span><span>Self-paced</span><span>Quizzes</span></div>
-        <span class="go">Start the Copilot course</span>
-      </a>
-      <a class="card" href="claude-course.html">
-        <span class="kicker">Course</span>
-        <h2>Claude in Practice</h2>
-        <p>Use Claude for writing, analysis and everyday work. Learn the modes, how to set up context once, and prompts that work.</p>
-        <div class="meta"><span>7 modules</span><span>Self-paced</span><span>Quizzes</span></div>
-        <span class="go">Start the Claude course</span>
-      </a>
+      <span>knownstateai</span>
     </div>
 
-    <div class="how">
-      <div><h3>Go at your own pace</h3><p>Short modules you can fit around your day. Your progress saves in your browser.</p></div>
-      <div><h3>Learn by doing</h3><p>Copy the example prompts, try them in your own tools, then check yourself with a short quiz.</p></div>
-      <div><h3>Context over clever prompts</h3><p>The idea running through both: give the AI the right context and the results follow.</p></div>
+    <div class="label">Free AI education</div>
+    <h1>Loading new blog <em>2027</em></h1>
+
+    <div class="bar"><div class="fill"></div></div>
+    <div class="pct"><span>loading…</span><span>2027</span></div>
+
+    <div class="status">
+      <div>current state: <b>thinking</b><span class="cursor"></span></div>
     </div>
-  </main>
-
-  <footer>
-    <div>knownstateai · Free AI courses</div>
-  </footer>
-
+  </div>
 </body>
 </html>
